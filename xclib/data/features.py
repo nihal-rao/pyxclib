@@ -137,7 +137,7 @@ class DenseFeatures(FeaturesBase):
         self.X = scale(self.X, copy=copy, norm=norm)
 
     def frequency(self, axis=0):
-        return np.array(self.X.astype(np.bool).sum(axis=axis)).ravel()
+        return np.array(self.X.astype(bool).sum(axis=axis)).ravel()
 
     def load(self, data_dir, fname, X):
         if X is not None:
@@ -183,7 +183,7 @@ class SparseFeatures(FeaturesBase):
         return self.X[:, indices]
 
     def frequency(self, axis=0):
-        return np.array(self.X.astype(np.bool).sum(axis=axis)).ravel()
+        return np.array(self.X.astype(bool).sum(axis=axis)).ravel()
 
     def __getitem__(self, index):
         x = self.X[index].indices

@@ -36,7 +36,7 @@ class Statistics(object):
         return labels.sum(axis=1).mean().item()
 
     def compute_avg_doc_length(self, features):
-        return features.astype(np.bool).sum(axis=1).mean().item()
+        return features.astype(bool).sum(axis=1).mean().item()
 
     def compute(self, train_features, train_labels, 
                 test_features=None, test_labels=None):
